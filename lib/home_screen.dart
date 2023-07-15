@@ -36,6 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         .push(AppRouter.animatedContainerScreen);
                   },
                   child: const Text('Go to animated container screen')),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.animatedColorScreen);
+                  },
+                  child: const Text('Go to animated Color screen')),
             ],
           ),
         ),

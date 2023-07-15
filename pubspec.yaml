@@ -39,6 +39,7 @@ dependencies:
   flutter_localization: ^0.1.12
   localization: ^2.1.0
   animate_do: ^3.0.2
+  #extension: ^0.6.0
 
 dev_dependencies:
   flutter_test:
