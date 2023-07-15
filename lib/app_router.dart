@@ -1,3 +1,4 @@
+import 'package:animations/Screens/animated_align_screen.dart';
 import 'package:animations/Screens/animated_color_screen.dart';
 import 'package:animations/Screens/animated_container_screen.dart';
 import 'package:animations/Screens/animated_list_screen.dart';
@@ -9,6 +10,7 @@ abstract class AppRouter {
   static const animatedListScreen = '/animatedListScreen';
   static const animatedContainerScreen = '/animatedContainerScreen';
   static const animatedColorScreen = '/animatedColorScreen';
+  static const animatedAlignScreen = '/animatedAlignScreen';
 
   static final router = GoRouter(
     routes: [
@@ -49,6 +51,16 @@ abstract class AppRouter {
           context: context,
           state: state,
           child: const AnimatedColorScreen(),
+          animationType: AnimationType.sideTransitionFromLtoR,
+        ),
+      ),
+      GoRoute(
+        path: animatedAlignScreen,
+        builder: (context, state) => const AnimatedAlignScree(),
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const AnimatedAlignScree(),
           animationType: AnimationType.sideTransitionFromLtoR,
         ),
       ),

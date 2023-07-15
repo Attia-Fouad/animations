@@ -17,35 +17,39 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.animatedListScreen);
-                  },
-                  child: const Text('Go to animated list screen')),
-              const SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    GoRouter.of(context)
-                        .push(AppRouter.animatedContainerScreen);
-                  },
-                  child: const Text('Go to animated container screen')),
-              const SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.animatedColorScreen);
-                  },
-                  child: const Text('Go to animated Color screen')),
-            ],
-          ),
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.animatedListScreen);
+                },
+                child: const Text('Go to animated list screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.animatedContainerScreen);
+                },
+                child: const Text('Go to animated container screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.animatedColorScreen);
+                },
+                child: const Text('Go to animated Color screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.animatedAlignScreen);
+                },
+                child: const Text('Go to animated align screen')),
+          ],
         ),
       ),
     );
