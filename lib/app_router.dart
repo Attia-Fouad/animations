@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import 'Screens/animated_physical_model_screen.dart';
 import 'Screens/explicit_animations/positioned_transition.dart';
+import 'Screens/explicit_animations/size_transition_screen.dart';
 
 abstract class AppRouter {
   static const animatedListScreen = '/animatedListScreen';
@@ -16,6 +17,7 @@ abstract class AppRouter {
   static const animatedAlignScreen = '/animatedAlignScreen';
   static const animatedPhysicalModelScreen = '/animatedPhysicalModelScreen';
   static const positionedTransitionScreen = '/positionedTransitionScreen';
+  static const sizeTransitionScreen = '/sizeTransitionScreen';
 
   static final router = GoRouter(
     routes: [
@@ -86,6 +88,16 @@ abstract class AppRouter {
           context: context,
           state: state,
           child: const PositionedTransitionScreen(),
+          animationType: AnimationType.sideTransitionFromLtoR,
+        ),
+      ),
+      GoRoute(
+        path: sizeTransitionScreen,
+        builder: (context, state) => const SizeTransitionScreen(),
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const SizeTransitionScreen(),
           animationType: AnimationType.sideTransitionFromLtoR,
         ),
       ),

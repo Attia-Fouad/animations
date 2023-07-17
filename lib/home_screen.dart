@@ -71,6 +71,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       .push(AppRouter.positionedTransitionScreen);
                 },
                 child: const Text('Go to positioned transition screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  // Customize other button properties if needed
+                ),
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.sizeTransitionScreen);
+                },
+                child: const Text('Go to size transition screen')),
           ],
         ),
       ),
