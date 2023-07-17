@@ -49,6 +49,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   GoRouter.of(context).push(AppRouter.animatedAlignScreen);
                 },
                 child: const Text('Go to animated align screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context)
+                      .push(AppRouter.animatedPhysicalModelScreen);
+                },
+                child: const Text('Go to animated physicalModel screen')),
           ],
         ),
       ),
