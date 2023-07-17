@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'Screens/animated_physical_model_screen.dart';
+import 'Screens/explicit_animations/positioned_transition.dart';
 
 abstract class AppRouter {
   static const animatedListScreen = '/animatedListScreen';
@@ -14,6 +15,7 @@ abstract class AppRouter {
   static const animatedColorScreen = '/animatedColorScreen';
   static const animatedAlignScreen = '/animatedAlignScreen';
   static const animatedPhysicalModelScreen = '/animatedPhysicalModelScreen';
+  static const positionedTransitionScreen = '/positionedTransitionScreen';
 
   static final router = GoRouter(
     routes: [
@@ -74,6 +76,16 @@ abstract class AppRouter {
           context: context,
           state: state,
           child: const AnimatedPhysicalModelScreen(),
+          animationType: AnimationType.sideTransitionFromLtoR,
+        ),
+      ),
+      GoRoute(
+        path: positionedTransitionScreen,
+        builder: (context, state) => const PositionedTransitionScreen(),
+        pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+          context: context,
+          state: state,
+          child: const PositionedTransitionScreen(),
           animationType: AnimationType.sideTransitionFromLtoR,
         ),
       ),
