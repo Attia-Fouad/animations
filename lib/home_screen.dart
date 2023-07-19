@@ -1,3 +1,5 @@
+import 'package:animations/Screens/animated_align_screen.dart';
+import 'package:animations/page_transition/rotate_with_scale_page_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -95,6 +97,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   GoRouter.of(context).push(AppRouter.rotationTransitionScreen);
                 },
                 child: const Text('Go to rotation transition screen')),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context).push(PageRotateWithScaleTransition(
+                      const AnimatedAlignScree()));
+                },
+                child: const Text(
+                  "Page Rotate With Scale Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
           ],
         ),
       ),
