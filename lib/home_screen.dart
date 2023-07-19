@@ -1,4 +1,5 @@
 import 'package:animations/Screens/animated_align_screen.dart';
+import 'package:animations/page_transition/fade_with_size_page_transition.dart';
 import 'package:animations/page_transition/rotate_with_scale_page_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -108,6 +109,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: const Text(
                   "Page Rotate With Scale Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      PageFadeWithSizeTransition(const AnimatedAlignScree()));
+                },
+                child: const Text(
+                  "Page Fade With Size Transition",
                   style: TextStyle(color: Colors.white),
                 )),
           ],
